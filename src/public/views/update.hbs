@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: url("/css/bg.gif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-y: scroll;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-box {
+            padding: 30px;
+            width: 512px;
+            height: auto;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            border-radius: 0x;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-box label {
+            color: white;
+            margin-left: 20px;
+        }
+
+        .input-box input[type="text"],
+        .input-box input[type="email"],
+        .input-box input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .input-box input[type="text"]:hover,
+        .input-box input[type="text"]:focus,
+        .input-box input[type="email"]:hover,
+        .input-box input[type="email"]:focus,
+        .input-box input[type="tel"]:hover,
+        .input-box input[type="tel"]:focus {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .submit {
+            font-size: 15px;
+            font-weight: 500;
+            color: black;
+            height: 45px;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+
+        .submit:hover {
+            background: rgb(14, 169, 0);
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .edit-button {
+            font-size: 15px;
+            font-weight: 500;
+            color: white;
+            height: 45px;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            margin-top: 10px;
+        }
+
+        .edit-button:hover {
+            background: rgb(51, 122, 183);
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-box">
+            <h1>Update User</h1>
+            <form id="updateForm" action="/update/{{user._id}}" method="POST">
+                <div class="register-container">
+                    <div class="input-box">
+                        <label for="email">Email address:</label>
+                        <input type="email" id="email" name="email" value="{{user.email}}" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" value="{{user.name}}" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="roll_no">Roll No:</label>
+                        <input maxlength="3" type="text" id="roll_no" name="roll_no" value="{{user.roll_no}}">
+                    </div>
+
+                    <div class="input-box">
+                    <p>Select Branch:</p>
+                    <select name="branch" class="input-field" required>
+                        <option value="" disabled selected>Select Branch</option>
+                        <option value="BCA">BCA</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="MCE">MCA</option>
+                    </select>
+                </div>
+                  <div class="input-box">
+                    <p>Section:</p>
+                    <select name="section" class="input-field" required>
+                        <option value="" disabled selected>Section</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                    </select>
+
+                    <div class="input-box">
+                        <label for="student_email">Student Email:</label>
+                        <input type="email" id="student_email" name="student_email" value="{{user.student_email}}">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="phone_number">Phone Number:</label>
+                        <input type="tel" id="phone_number" maxlength="10" "phone_number" value="{{user.phone_number}}">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="local_address">Local Address:</label>
+                        <input type="text" id="local_address" name="local_address" value="{{user.local_address}}">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="father_name">Father's Name:</label>
+                        <input type="text" id="father_name" name="father_name" value="{{user.father_name}}">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="mother_name">Mother's Name:</label>
+                        <input type="text" id="mother_name" name="mother_name" value="{{user.mother_name}}">
+                    </div>
+
+                    <button type="submit" class="submit">Update User</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

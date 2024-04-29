@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+        }
+    </style>
+        <script>
+window.embeddedChatbotConfig = {
+chatbotId: "XoqaEnMtqoXnxnRgZ8PYr",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="XoqaEnMtqoXnxnRgZ8PYr"
+domain="www.chatbase.co"
+defer>
+</script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="form-box">
+        <div class="register-container">
+            <form id="registration-form" action="/register" method="post" enctype="multipart/form-data">
+            <img src="adamas.png" >
+            <h1>Mentor Mentee Form</h1>
+            <br>
+            <br>
+                <input type="hidden" name="timestamp" value="{{timestamp}}">
+                <div class="input-box">
+                    <p>Email Address:</p>
+                    <input type="email" name="email" class="input-field" placeholder="example@example.com" required>
+                </div>
+                <div class="input-box">
+                    <p>Name:</p>
+                    <input type="text" name="name" class="input-field" placeholder="Full name" required>
+                </div>
+                
+                <div class="input-box">
+                    <p>Profile Picture:</p>
+                    <input type="file" name="profile_picture" class="input-field" accept="image/*" required onchange="previewImage(event)">
+                    <img id="image-preview" class="preview-image" >
+                </div>
+                <div class="input-box">
+                    <p>Roll No:</p>
+                    <input type="text" name="roll_no" class="input-field" placeholder="100" maxlength="3" required>
+                </div>
+                <div class="input-box">
+                    <p>Select Branch:</p>
+                    <select name="branch" class="input-field" required>
+                        <option value="" disabled selected>Select Branch</option>
+                        <option value="BCA">BCA</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="MCE">MCA</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <p>Section:</p>
+                    <select name="section" class="input-field" required>
+                        <option value="" disabled selected>Section</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <p>Student Email:</p>
+                    <input type="email" name="student_email" class="input-field" placeholder="your.name@stu.adamasuniversity.ac.in" required>
+                </div>
+                <div class="input-box">
+                    <p>Phone Number:</p>
+                    <input type="tel" name="phone_number" class="input-field" placeholder="phone no" maxlength="10" required>
+                </div>
+                <div class="input-box">
+                    <p>Local Address:</p>
+                    <input type="text" name="local_address" class="input-field" placeholder="Local Address" required>
+                </div>
+
+                
+                <div class="input-box">
+                    <p>Father's Name:</p>
+                    <input type="text" name="father_name" class="input-field" placeholder="Father's Name" required>
+                </div>
+                <div class="input-box">
+                    <p>Father's Email Address:</p>
+                    <input type="email" name="father_email" class="input-field" placeholder="Father's Email Address" required>
+                </div>
+                <div class="input-box">
+                    <p>Father's Phone Number:</p>
+                    <input type="tel" name="father_phone_number" class="input-field" placeholder="Father's Phone Number" maxlength="10">
+                </div>
+                <div class="input-box">
+                    <p>Father's Occupation:</p>
+                    <input type="text" name="father_occupation" class="input-field" placeholder="Father's Occupation" required>
+                </div>
+                
+                <div class="input-box">
+                    <p>Mother's Name:</p>
+                    <input type="text" name="mother_name" class="input-field" placeholder="Mother's Name" required>
+                </div>
+                <div class="input-box">
+                    <p>Mother's Email Address:</p>
+                    <input type="email" name="mother_email" class="input-field" placeholder="Mother's Email Address" required>
+                </div>
+                <div class="input-box">
+                    <p>Mother's Phone Number:</p>
+                    <input type="tel" name="mother_phone_number" class="input-field" placeholder="Mother's Phone Number" maxlength="10" required>
+                </div>
+                <div class="input-box">
+                    <p>Mother's Occupation:</p>
+                    <input type="text" name="mother_occupation" class="input-field" placeholder="Mother's Occupation" required>
+                </div>
+                <div class="input-box">
+                    <p>Parent's Address:</p>
+                    <input type="text" name="parent_address" class="input-field" placeholder="Parent's Address" required>
+                </div>
+                <div class="input-box">
+                    <p>Class X Percentage %:</p>
+                    <input type="text" name="class_10_percentage" class="input-field" placeholder="Class X Percentage %" maxlength="2">
+                </div>
+                <div class="input-box">
+                    <p>Class XII Percentage %:</p>
+                    <input type="text" name="class_12_percentage" class="input-field" placeholder="Class XII Percentage %" maxlength="2" required>
+                </div>
+                <div class="input-box">
+                    <p>Mentor Mentee Details:</p>
+                    <textarea name="Mentor" class="input-field" placeholder="Enter your issue" required></textarea>
+                </div>
+                <div class="input-box">
+                    <p>Password:</p>
+                    <input type="password" name="password" class="input-field" placeholder="Enter a strong password" required>
+                </div>
+
+                
+                <div class="input-box">
+                    <div class="one">
+                        <input type="checkbox" id="register-check" name="declaration" value="true" required>
+                        <label for="register-check" style="color: white;"> I hereby declare that the information furnished above is true, complete and correct to the best of my knowledge and belief.</label>
+                    </div>
+                    
+                </div>
+
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('image-preview');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
+</body>
+</html>

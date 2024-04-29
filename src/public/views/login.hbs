@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+window.embeddedChatbotConfig = {
+chatbotId: "XoqaEnMtqoXnxnRgZ8PYr",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="XoqaEnMtqoXnxnRgZ8PYr"
+domain="www.chatbase.co"
+defer>
+</script>
+</head>
+<body>
+
+    <div class="form">
+        <img src="adamas.png" >
+        <h2>User Login</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password</label>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <input id="btn" type="submit" value="Login">
+            <p>New,Here? <a href="/register">Create an Account</a></p>
+            <p>Are you an admin? <a href="/adminlogin">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>

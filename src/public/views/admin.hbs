@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gamja+Flower&family=Madimi+One&family=Mountains+of+Christmas:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+             font-family: "Exo 2", sans-serif,Arial;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid #000; 
+            background-color: #fff;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid #000; 
+            border-right: 2px solid #000; 
+        }
+
+        th {
+            background-color: #3b73ec;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+      
+
+        img.profile-photo {
+            width: 100px
+            
+        }
+     .edit-button{
+        color: black;
+        width: 70px;
+        height: 70px;
+        background-color: rgb(59, 166, 59);
+        border: #000;
+        border-radius: 10px;
+        font-size: 15px;
+        }
+        
+        .delete-button{
+        color: black;
+        width: 70px;
+        height: 70px;
+        background-color: rgb(211, 45, 45);
+        border: #000;
+        border-radius: 10px;
+        font-size: 15px;
+        }
+        .logout-button {
+    text-align: left; /* Align text to the left */
+    position: absolute;
+    top: 0;
+    left: 0; /* Set to absolute left */
+    padding: 20px;
+    cursor: pointer;
+    background-color: #f20f0f;
+    color: #000000;
+     font-size: 15px;
+     color: black;
+        width: 100px;
+        height: 60px;
+        background-color: rgb(211, 45, 45);
+        border-radius: 10px;
+        font-size: 15px;
+}
+
+    
+
+        @keyframes highlightRow {
+            from {
+                background-color: #ffd700;
+            }
+            to {
+                background-color: #ffd700;
+            }
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Portal<button class="logout-button" onclick="window.location.href='http://127.0.0.1:3000/logout'">Logout</button></td></button></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Email Address</th>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Branch</th>
+                <th>Section</th>
+                <th>Profile Photo</th>
+                <th>Email</th>
+                <th>Phone No</th>
+                <th>Local Address</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Father's Occupation</th>
+                <th>Mother's Occupation</th>
+                <th>Father's Phone No</th>
+                <th>Father's Mail ID</th>
+                <th>Mother's Phone No</th>
+                <th>Mother's Mail ID</th>
+                <th>Parent's Address</th>
+                <th>Class X Percentage</th>
+                <th>Class XII Percentage</th>
+                <th>Declaration</th>
+                <th>Mentoring Details</th>
+                <th>Edit Details</th>
+                <th>Delete User</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{this.timestamp}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.name}}</td>
+                    <td>{{this.roll_no}}</td>
+                    <td>{{this.branch}}</td>
+                    <td>{{this.section}}</td>
+                    <td><img src="{{this.profile_picture}}" alt="Profile Photo" class="profile-photo"></td>
+                    <td>{{this.student_email}}</td>
+                    <td>{{this.phone_number}}</td>
+                    <td>{{this.local_address}}</td>
+                    <td>{{this.father_name}}</td>
+                    <td>{{this.mother_name}}</td>
+                    <td>{{this.father_occupation}}</td>
+                    <td>{{this.mother_occupation}}</td>
+                    <td>{{this.father_phone_number}}</td>
+                    <td>{{this.father_email}}</td>
+                    <td>{{this.mother_phone_number}}</td>
+                    <td>{{this.mother_email}}</td>
+                    <td>{{this.parent_address}}</td>
+                    <td>{{this.class_10_percentage}}</td>
+                    <td>{{this.class_12_percentage}}</td>
+                    <td>{{this.declaration}}</td>
+                    <td>{{this.Mentor}}</td>
+                    <td><button class="edit-button" onclick="window.location.href='http://127.0.0.1:3000/update/{{this._id}}'">Edit Details</button></td>
+                    <td><button class="delete-button" onclick="window.location.href='http://127.0.0.1:3000/delete/{{this._id}}'">Delete</button></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>
